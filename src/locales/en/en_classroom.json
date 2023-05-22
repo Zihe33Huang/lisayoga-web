@@ -1,0 +1,13 @@
+{
+  "classroom_labels": {
+    "classroom": "Classroom",
+    "add": "Add",
+    "serialNumber": "Serial Number",
+    "name": "Name",
+    "action": "Action",
+    "edit": "Edit",
+    "place": "Placeholder",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "enable": "Enable",
+  "disable": "Disable",
+  "add": "Add",
+  "edit": "Edit",
+  "action": "Action",
+  "detail": "Detail",
+  "index": "Index",
+  "name": "Name",
+  "menu": {
+    "Calendar": "Calendar",
+    "Schedule": "Schedule",
+    "Member": "Member",
+    "Course": "Course",
+    "Trainer": "Trainer",
+    "Report": "Report",
+    "Classroom": "Classroom",
+    "Configure": "Configure"
+  }
+}

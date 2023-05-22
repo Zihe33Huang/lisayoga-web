@@ -1,0 +1,50 @@
+{
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "course": "Course",
+  "enabled": "Enabled",
+  "disabled": "Disabled",
+  "add": "Add",
+  "search": "Search",
+  "enterCourseName": "Enter course name",
+  "index": "Index",
+  "name": "Name",
+  "availableCardTypes": "Available Card Types",
+  "duration": "Duration",
+  "capacity": "Capacity",
+  "minimumStart": "Minimum Start",
+  "coursePrice": "Course Price",
+  "backgroundColor": "Background Color",
+  "actions": "Actions",
+  "edit": "Edit",
+  "course_labels": {
+    "courseDescription": "Course Description",
+    "maximumCapacity": "Maximum Capacity",
+    "minimumEnrollment": "Minimum Enrollment",
+    "courseDurationMinutes": "Course Duration (minutes)",
+    "courseName": "Course Name",
+    "serialNumber": "Serial Number",
+    "name": "Name",
+    "availableCardTypes": "Available Card Types",
+    "duration": "Duration",
+    "capacity": "Capacity",
+    "minimumStart": "Minimum Start",
+    "coursePrice": "Course Price",
+    "backgroundColor": "Background Color",
+    "actions": "Actions",
+    "courseDuration": "Course Duration"
+  },
+  "courseList": {
+    "regularGroupCard": "Regular Group Card",
+    "vipGroupCard": "VIP Group Card",
+    "regularPersonalTrainingCard": "Regular Personal Training Card",
+    "pilatesEquipmentPersonalTrainingCard": "Pilates Equipment Personal Training Card",
+    "pilatesEquipmentGroupCard": "Pilates Equipment Group Card",
+    "rechargeCard": "Recharge Card",
+    "bigRechargePackageCard": "Big Recharge Package Card",
+    "pregnancyCard": "Pregnancy Card"
+  },
+  "placeholders": {
+    "select": "Select"
+  }
+}

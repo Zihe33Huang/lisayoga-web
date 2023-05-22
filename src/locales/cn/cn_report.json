@@ -1,0 +1,12 @@
+{
+  "report_labels": {
+    "rangeSeparator": "至",
+    "activeName": "teacherCourse",
+    "tab1Label": "主营业务记录",
+    "tab2Label": "教师工资统计",
+    "tab3Label": "教师上课次数",
+    "tab4Label": "课程次数",
+    "name": "姓名",
+    "place": "请输入"
+  }
+}

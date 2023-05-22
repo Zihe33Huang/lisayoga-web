@@ -1,0 +1,20 @@
+{
+  "enable": "启用",
+  "disable": "禁用",
+  "add": "添加",
+  "edit": "编辑",
+  "action": "操作",
+  "detail": "详情",
+  "index": "序号",
+  "name": "名字",
+  "menu": {
+    "Calendar": "课程日历",
+    "Schedule": "课程列表",
+    "Member": "会员",
+    "Course": "课程",
+    "Trainer": "教练",
+    "Report": "报表",
+    "Classroom": "教室",
+    "Configure": "配置"
+  }
+}

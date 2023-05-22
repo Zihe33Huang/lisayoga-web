@@ -1,0 +1,95 @@
+{
+  "login": {
+    "username": "用户名",
+    "password": "密码",
+    "login": "登录",
+    "reset": "重置",
+    "validation": {
+      "usernameRequired": "请输入用户名",
+      "usernameLength": "长度必须在2到25个字符之间",
+      "passwordRequired": "请输入密码",
+      "passwordLength": "长度必须在6到15个字符之间"
+    },
+    "notification": {
+      "errorTitle": "错误",
+      "errorMsg": "用户名或密码不正确"
+    }
+  },
+  "form": {
+    "types": {
+      "0": "添加会员",
+      "1": "添加试用会员"
+    }
+  },
+  "tableHeaders": {
+    "serialNumber": "序号",
+    "type": "类型",
+    "name": "姓名",
+    "wechatNumber": "微信号",
+    "age": "年龄",
+    "joiningDate": "入会日期",
+    "phoneNumber": "手机号",
+    "weight": "体重",
+    "height": "身高",
+    "channel": "来源",
+    "operations": "操作"
+  },
+  "member_labels": {
+    "name": "姓名",
+    "wechat": "微信号",
+    "birthdate": "出生日期",
+    "phoneNumber": "手机号",
+    "entryTime": "入会时间",
+    "weight": "体重",
+    "height": "身高",
+    "channel": "来源",
+    "selectDate": "选择日期",
+    "select": "选择",
+    "friendName": "推荐人姓名",
+    "specificPlace": "推荐人具体场所",
+    "experienceYoga": "是否练习瑜伽?",
+    "sportInjury": "是否有运动损伤或疾病?",
+    "experienceAim": "您的目的是什么?",
+    "operations": "操作",
+    "yes": "是",
+    "no": "否"
+  },
+  "buttons": {
+    "cancel": "取消",
+    "confirm": "确认",
+    "verifyCoupon": "验券",
+    "openCard": "开卡",
+    "refund": "退款",
+    "details": "详情",
+    "edit": "编辑",
+    "uploadContract": "上传合同",
+    "delete": "删除",
+    "enabled": "启用",
+    "disabled": "禁用",
+    "addExperienceMember": "添加体验会员",
+    "addMember": "添加会员",
+    "hideOperation": "显示操作",
+    "search": "搜索"
+  },
+  "placeholders": {
+    "enterMemberName": "请输入会员姓名"
+  },
+  "responses": {
+    "yes": "是",
+    "no": "否"
+  },
+  "menu": {
+    "Calendar": "日历",
+    "Schedule": "排课",
+    "Member": "会员",
+    "Course": "课程",
+    "Trainer": "教练",
+    "Report": "报表",
+    "Classroom": "教室",
+    "Configure": "配置"
+  },
+  "memberTypes": {
+    "formalMember": "正式会员",
+    "TrialMember": "体验会员"
+  }
+}

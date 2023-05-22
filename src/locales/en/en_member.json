@@ -1,0 +1,97 @@
+{
+  "login": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "reset": "Reset",
+    "validation": {
+      "usernameRequired": "Please enter a username",
+      "usernameLength": "Length must be between 2 and 25 characters",
+      "passwordRequired": "Please enter a password",
+      "passwordLength": "Length must be between 6 and 15 characters"
+    },
+    "notification": {
+      "errorTitle": "Error",
+      "errorMsg": "Incorrect username or password"
+    }
+  },
+  "form": {
+    "types": {
+      "0": "Add member",
+      "1": "Add trial member"
+    }
+  },
+  "tableHeaders": {
+    "serialNumber": "Serial Number",
+    "type": "Type",
+    "name": "Name",
+    "wechatNumber": "WeChat",
+    "age": "Age",
+    "joiningDate": "Joining Date",
+    "phoneNumber": "Phone",
+    "weight": "Weight",
+    "height": "Height",
+    "channel": "Channel",
+    "operations": "Operations"
+  },
+  "member_labels": {
+    "name": "Name",
+    "wechat": "Wechat ID",
+    "birthdate": "Birthdate",
+    "phoneNumber": "Phone Number",
+    "entryTime": "Entry Time",
+    "weight": "Weight",
+    "height": "Height",
+    "channel": "Channel",
+    "selectDate": "Select Date",
+    "select": "Select",
+    "friendName": "Friend's Name",
+    "specificPlace": "Specific Place",
+    "experienceYoga": "Have you practiced yoga before?",
+    "sportInjury": "Do you have any sport injuries or illnesses?",
+    "experienceAim": "What's your aim to experience?",
+    "operations": "Operations",
+    "yes": "yes",
+    "no": "no",
+    "cardType": "Card Type",
+    "paymentAmount": "Payment Amount",
+    "channelFee": "Channel Fee",
+    "actualAmount": "Actual Amount",
+    "isFree": "Is Free?",
+    "openCardDate": "Open Card Date",
+    "joiningDate": "joining Date"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "verifyCoupon": "Coupon",
+    "openCard": "Card Issue",
+    "refund": "Refund",
+    "details": "Details",
+    "edit": "Edit",
+    "uploadContract": "Upload",
+    "delete": "Delete",
+    "enabled": "Enable",
+    "disabled": "Disable",
+    "addExperienceMember": "Add Experience Member",
+    "addMember": "Add Member",
+    "hideOperation": "Show Operation",
+    "search": "Search"
+  },
+  "placeholders": {
+    "enterMemberName": "Please enter member name",
+    "cardType": "Trial Card",
+    "paymentAmount": "Payment Amount",
+    "channelFee": "Channel Fee",
+    "actualAmount": "Actual Amount",
+    "selectDate": "Select Date"
+  },
+  "responses": {
+    "yes": "Yes",
+    "no": "No"
+  },
+  "memberTypes": {
+    "formalMember": "Formal",
+    "TrialMember": "Trial"
+  }
+}

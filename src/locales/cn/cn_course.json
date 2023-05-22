@@ -1,0 +1,50 @@
+{
+  "cancel": "取消",
+  "confirm": "确认",
+  "course": "课程",
+  "enabled": "启用",
+  "disabled": "禁用",
+  "add": "添加",
+  "search": "搜索",
+  "enterCourseName": "输入课程名称",
+  "index": "序号",
+  "name": "名称",
+  "availableCardTypes": "可用卡类型",
+  "duration": "时长",
+  "capacity": "容量",
+  "minimumStart": "最小开课人数",
+  "coursePrice": "课程价格",
+  "backgroundColor": "背景颜色",
+  "actions": "操作",
+  "edit": "编辑",
+  "course_labels": {
+    "courseDescription": "课程描述",
+    "maximumCapacity": "最大容量",
+    "minimumEnrollment": "最小报名人数",
+    "courseDurationMinutes": "课程时长（分钟）",
+    "courseName": "课程名称",
+    "serialNumber": "编号",
+    "name": "名称",
+    "availableCardTypes": "可用卡类型",
+    "duration": "时长",
+    "capacity": "容量",
+    "minimumStart": "最小开课人数",
+    "coursePrice": "课程价格",
+    "backgroundColor": "背景颜色",
+    "actions": "操作",
+    "courseDuration": "课程时长"
+  },
+  "courseList": {
+    "regularGroupCard": "常规团课卡",
+    "vipGroupCard": "VIP团课卡",
+    "regularPersonalTrainingCard": "常规私教卡",
+    "pilatesEquipmentPersonalTrainingCard": "普拉提器械私教卡",
+    "pilatesEquipmentGroupCard": "普拉提器械团课卡",
+    "rechargeCard": "充值卡",
+    "bigRechargePackageCard": "大充值套餐卡",
+    "pregnancyCard": "孕妇瑜伽卡"
+  },
+  "placeholders": {
+    "select": "请选择"
+  }
+}

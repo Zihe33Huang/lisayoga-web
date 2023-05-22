@@ -1,0 +1,57 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+.tams-search-container {
+    padding-bottom: 10px;
+}
+.tams-search-container .tams-search-item {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.cardType {
+    text-align: center;
+}
+
+#HideOps {
+    float: right;
+}
+
+.tams-search-container .tams-operate-item {
+    float: right;
+}
+
+.tams-form-container .tams-form-item {
+    width: 250px;
+}
+
+.tams-form-container .tams-form-label {
+    white-space: nowrap;
+}
+
+/*重写element样式*/
+.el-card__header {
+    padding: 9px 10px;
+}
+
+.el-table td, .el-table th {
+    padding: 8px 0;
+    min-width: 0;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    position: relative;
+    text-align: left;
+}
+
+.content-container{
+    padding-bottom:45px;
+}
+.tab-bar-container{
+    position:fixed;
+    bottom:0;
+    height:45px;
+    z-index:999;
+}

@@ -1,0 +1,12 @@
+{
+  "report_labels": {
+    "rangeSeparator": "to",
+    "activeName": "teacherCourse",
+    "tab1Label": "Primary Business Record",
+    "tab2Label": "Teacher Salary Statistics",
+    "tab3Label": "Teacher Class Count",
+    "tab4Label": "Course Count",
+    "name": "Name",
+    "place": "Please input"
+  }
+}
