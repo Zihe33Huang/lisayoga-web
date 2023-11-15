@@ -32,20 +32,20 @@
           </template>
         </el-table-column>
         <el-table-column prop="name" :label="$t('tableHeaders.name')"></el-table-column>
-        <el-table-column prop="wechat" :label="$t('tableHeaders.wechatNumber')"></el-table-column>
+<!--        <el-table-column prop="wechat" :label="$t('tableHeaders.wechatNumber')"></el-table-column>-->
         <el-table-column prop="age" :label="$t('tableHeaders.age')"></el-table-column>
         <el-table-column prop="enterTime" :label="$t('tableHeaders.joiningDate')"></el-table-column>
         <el-table-column prop="phoneNum" :label="$t('tableHeaders.phoneNumber')"></el-table-column>
         <el-table-column prop="weight" :label="$t('tableHeaders.weight')"></el-table-column>
         <el-table-column prop="height" :label="$t('tableHeaders.height')"></el-table-column>
-        <el-table-column :formatter="getChannel" :label="$t('tableHeaders.channel')"></el-table-column>
+<!--        <el-table-column :formatter="getChannel" :label="$t('tableHeaders.channel')"></el-table-column>-->
         <el-table-column
           fixed="right"
           :label="$t('tableHeaders.operations')"
           width="550" v-if="showOperation">
           <template slot-scope="scope">
             <div v-if="scope.row.type === 0 || scope.row.type === 2">
-              <el-button type="primary" size="mini" @click="showOpenCoupon(scope.row)">{{$t('buttons.verifyCoupon')}}</el-button>
+<!--              <el-button type="primary" size="mini" @click="showOpenCoupon(scope.row)">{{$t('buttons.verifyCoupon')}}</el-button>-->
               <el-button type="primary" size="mini" @click="showOpenCard(scope.row)">{{$t('buttons.openCard')}}</el-button>
               <el-button type="primary" size="mini" @click="showRefund(scope.row.id)">{{$t('buttons.refund')}}</el-button>
               <el-button type="primary" size="mini" @click="showDetail(scope.row)">{{$t('buttons.details')}}</el-button>
@@ -148,7 +148,7 @@ export default {
       id: '',
       loading: false,
       channelMap: ['大众点评', '传单', '微信群', '微信朋友圈', '搜索引擎', '朋友介绍', '母婴论坛', '合作月子中心', '其他合作伙伴'],
-      showOperation: false
+      showOperation: true
     }
   },
   methods: {

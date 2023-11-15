@@ -46,8 +46,12 @@ function loadLocaleMessages () {
     }
   }
 }
+const item = localStorage.getItem('locale')
+if (item === null) {
+  localStorage.setItem('locale', 'cn')
+}
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: localStorage.getItem('locale'),
   messages: loadLocaleMessages()
 })
 locale.i18n((key, value) => i18n.t(key, value))

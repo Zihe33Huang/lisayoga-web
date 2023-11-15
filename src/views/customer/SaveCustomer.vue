@@ -8,9 +8,9 @@
       <el-form-item :label="$t('member_labels.name')" prop="name">
         <el-input v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.wechat')" prop="name">
-        <el-input v-model="form.wechat" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('member_labels.wechat')" prop="name">-->
+<!--        <el-input v-model="form.wechat" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item  :label="$t('member_labels.birthdate')" prop="name">
         <div class="block">
           <el-date-picker
@@ -20,10 +20,10 @@
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.phoneNumber')" prop="name">
+      <el-form-item :label="$t('member_labels.phoneNumber')" label-width="120px" prop="name">
         <el-input v-model="form.phoneNum" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item v-if="form.type === 0" :label="$t('member_labels.entryTime')" prop="name">
+      <el-form-item v-if="form.type === 0" :label="$t('member_labels.entryTime')"  label-width="100px" prop="name">
         <div class="block">
           <el-date-picker
             v-model="form.enterTime"
@@ -38,56 +38,56 @@
       <el-form-item v-if="form.type === 0" :label="$t('member_labels.height')" prop="name">
         <el-input style="width: 80px" v-model="form.height"  class="tams-form-item"></el-input> cm
       </el-form-item>
-      <el-form-item :label="$t('member_labels.channel')" prop="name" v-if="customerType === 0">
-        <template>
-          <el-select
-            v-model="form.channel"
-            collapse-tags
-            style="margin-left: 20px;"
-            :placeholder="$t('member_labels.select')">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </template>
-      </el-form-item>
-      <el-form-item :label="$t('member_labels.channel')" prop="name" v-else>
-        <template>
-          <el-select
-            v-model="form.channel"
-            collapse-tags
-            :placeholder="$t('member_labels.select')">
-            <el-option
-              v-for="item in optionsExperience"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </template>
-      </el-form-item>
-      <el-form-item v-if="form.channel ==='5'" :label="$t('member_labels.friendName')" prop="name">
-        <el-input v-model="form.channelExt" class="tams-form-item"></el-input>
-      </el-form-item>
-      <el-form-item v-if="form.channel === '9'" :label="$t('member_labels.specificPlace')" prop="name">
-        <el-input v-model="form.channelExt" class="tams-form-item"></el-input>
-      </el-form-item>
-      <el-form-item v-if="form.type === 1" :label="$t('member_labels.experienceYoga')" prop="name" label-width="120px">
-        <template>
-          <el-radio v-model="form.hasPracticed" label="1">{{$t('member_labels.yes')}}</el-radio>
-          <el-radio v-model="form.hasPracticed" label="0">{{$t('member_labels.no')}}</el-radio>
-        </template>
-      </el-form-item>
-      <el-form-item v-if="form.type === 1" :label="$t('member_labels.sportInjury')" prop="name" label-width="170px">
-        <el-radio v-model="form.hasHurt" label="1">{{$t('member_labels.yes')}}</el-radio>
-        <el-radio v-model="form.hasHurt" label="0">{{$t('member_labels.no')}}</el-radio>
-      </el-form-item>
-      <el-form-item v-if="form.type === 1" :label="$t('member_labels.experienceAim')" prop="name">
-        <el-input v-model="form.aim" type="textarea"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('member_labels.channel')" prop="name" v-if="customerType === 0">-->
+<!--        <template>-->
+<!--          <el-select-->
+<!--            v-model="form.channel"-->
+<!--            collapse-tags-->
+<!--            style="margin-left: 20px;"-->
+<!--            :placeholder="$t('member_labels.select')">-->
+<!--            <el-option-->
+<!--              v-for="item in options"-->
+<!--              :key="item.value"-->
+<!--              :label="item.label"-->
+<!--              :value="item.value">-->
+<!--            </el-option>-->
+<!--          </el-select>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item :label="$t('member_labels.channel')" prop="name" v-else>-->
+<!--        <template>-->
+<!--          <el-select-->
+<!--            v-model="form.channel"-->
+<!--            collapse-tags-->
+<!--            :placeholder="$t('member_labels.select')">-->
+<!--            <el-option-->
+<!--              v-for="item in optionsExperience"-->
+<!--              :key="item.value"-->
+<!--              :label="item.label"-->
+<!--              :value="item.value">-->
+<!--            </el-option>-->
+<!--          </el-select>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.channel ==='5'" :label="$t('member_labels.friendName')" prop="name">-->
+<!--        <el-input v-model="form.channelExt" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.channel === '9'" :label="$t('member_labels.specificPlace')" prop="name">-->
+<!--        <el-input v-model="form.channelExt" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.type === 1" :label="$t('member_labels.experienceYoga')" prop="name" label-width="120px">-->
+<!--        <template>-->
+<!--          <el-radio v-model="form.hasPracticed" label="1">{{$t('member_labels.yes')}}</el-radio>-->
+<!--          <el-radio v-model="form.hasPracticed" label="0">{{$t('member_labels.no')}}</el-radio>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.type === 1" :label="$t('member_labels.sportInjury')" prop="name" label-width="170px">-->
+<!--        <el-radio v-model="form.hasHurt" label="1">{{$t('member_labels.yes')}}</el-radio>-->
+<!--        <el-radio v-model="form.hasHurt" label="0">{{$t('member_labels.no')}}</el-radio>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.type === 1" :label="$t('member_labels.experienceAim')" prop="name">-->
+<!--        <el-input v-model="form.aim" type="textarea"></el-input>-->
+<!--      </el-form-item>-->
     </el-form>
     <div slot="footer" class="dialog-footer">
       <el-button @click="close">{{$t('buttons.cancel')}}</el-button>

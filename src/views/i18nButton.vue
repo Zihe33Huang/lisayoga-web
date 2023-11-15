@@ -2,10 +2,10 @@
     <div style="text-align: center" v-if="shouldShowElement">
       <el-dropdown trigger="click" @command="changeLanguage">
         <span class="el-dropdown-link">
-          {{ language.title }}<i class="el-icon-arrow-down el-icon--right"></i>
+          {{ title }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item v-for="(item,index) in languageList" :key="index" :command="index" >
+          <el-dropdown-item v-for="(item,index) in selectedlanguageList" :key="index" :command="index" >
             {{ item.title }}
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -19,18 +19,35 @@ export default {
   name: 'App',
   data () {
     return {
-      language: {
-        value: 'ZH-CN',
-        title: '简体中文'
-      },
-      languageList: [
+      title: '简体中文',
+      languageList_cn: [
         {
           value: 'ZH-CN',
           title: '简体中文'
         },
         {
           value: 'EN-US',
+          title: '英语'
+        }
+      ],
+      languageList_en: [
+        {
+          value: 'ZH-CN',
+          title: 'Chinese'
+        },
+        {
+          value: 'EN-US',
           title: 'English'
+        }
+      ],
+      selectedlanguageList: [
+        {
+          value: 'ZH-CN',
+          title: '简体中文'
+        },
+        {
+          value: 'EN-US',
+          title: '英语'
         }
       ]
     }
@@ -40,34 +57,44 @@ export default {
       // Replace this with your own logic to determine when to show the element
       return !(this.$route.path === '/course-scheduling')
     }
+    // selectedLanguageList () {
+    //   const item = localStorage.getItem('locale')
+    //   if (item === 'en') {
+    //     return this.languageList_en
+    //   } else if (item === 'cn') {
+    //     return this.languageList_cn
+    //   }
+    //   return null
+    // }
+  },
+  created () {
+    this.getLocaleText()
   },
   methods: {
+    getLocaleText () {
+      const locale = localStorage.getItem('locale')
+      if (locale === 'en') {
+        this.title = 'English'
+        this.selectedlanguageList = this.languageList_en
+      } else if (locale === 'cn') {
+        this.title = '简体中文'
+        this.selectedlanguageList = this.languageList_cn
+      }
+    },
     changeLanguage (index, event) {
-      this.language = this.languageList[index]
-      switch (this.language.value) {
+      const language = this.selectedlanguageList[index]
+      switch (language.value) {
         case 'EN-US':
-          this.$i18n.locale = 'en'
-          this.language.title = 'English'
-          this.languageList = [{
-            value: 'ZH-CN',
-            title: 'Chinese'
-          },
-          {
-            value: 'EN-US',
-            title: 'English'
-          }]
+          localStorage.setItem('locale', 'en')
+          this.$i18n.locale = localStorage.getItem('locale')
+          this.title = 'English'
+          this.selectedlanguageList = this.languageList_en
           break
         case 'ZH-CN':
-          this.$i18n.locale = 'cn'
-          this.language.title = '简体中文'
-          this.languageList = [{
-            value: 'ZH-CN',
-            title: '简体中文'
-          },
-          {
-            value: 'EN-US',
-            title: '英语'
-          }]
+          localStorage.setItem('locale', 'cn')
+          this.$i18n.locale = localStorage.getItem('locale')
+          this.title = '中文'
+          this.selectedlanguageList = this.languageList_cn
           break
       }
       this.$emit('refresh-data', event)

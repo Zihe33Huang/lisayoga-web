@@ -1,4 +1,24 @@
 {
+  "MembershipInfo": "会员卡信息",
+  "AppointInfo": "约课信息",
+  "FileInfo": "文件信息",
+  "FileName": "文件名称",
+  "CardName": "卡名称",
+  "IssuedDate": "办卡日期",
+  "Category": "种类",
+  "Date": "日期",
+  "CourseTime": "上课时间",
+  "Course": "课程",
+  "TotalPayment": "总价",
+  "Total": "总数 (天数, 次数, 金额)",
+  "usedLabel": "已用（天数，次数，金额）",
+  "remainingLabel": "剩余（天数，次数，金额）",
+  "cancelCountLabel": "取消次数",
+  "expiryLabel": "有效期",
+  "startDateLabel": "开始时间",
+  "tips": "将文件拖到此处，或 ",
+  "fileLimit": "只能上传jpg/png文件，且不超过500kb",
+  "ClickUpload": "点击上传",
   "login": {
     "username": "用户名",
     "password": "密码",
@@ -68,7 +88,7 @@
     "disabled": "禁用",
     "addExperienceMember": "添加体验会员",
     "addMember": "添加会员",
-    "hideOperation": "显示操作",
+    "hideOperation": "隐藏操作",
     "search": "搜索"
   },
   "placeholders": {
@@ -91,5 +111,25 @@
   "memberTypes": {
     "formalMember": "正式会员",
     "TrialMember": "体验会员"
+  },
+  "IssueCard": {
+    "IssueCard": "开卡",
+    "CardType": "卡类别",
+    "Select": "选择",
+    "PaymentAmount": "支付金额",
+    "ValidityPeriod": "有效期",
+    "Number": "次数",
+    "StartDate": "起始日期",
+    "SelectDate": "选择日期",
+    "Gym-SpecificCard": "是否为本馆专用卡",
+    "PaymentMethod": "支付方式",
+    "PleaseSelect": "请选择",
+    "ChannelCosts": "渠道费用",
+    "ActualRevenue": "实际入账",
+    "BillingTrainer": "开单教练",
+    "YearCard": "年卡",
+    "HalfYearCard": "半年卡",
+    "SeasonCard": "季卡",
+    "MonthCard": "月卡"
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="详情" width="1000px"
+  <el-dialog :title="$t('buttons.details')" width="1000px"
              :close-on-click-modal="false"
              :close-on-press-escape="false"
              :visible.sync="dialogVisible"
@@ -8,29 +8,29 @@
       <el-form-item :label="$t('name')" prop="name">
         <el-input disabled v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.wechat')" prop="name">
-        <el-input disabled v-model="form.wechat" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('member_labels.wechat')" prop="name">-->
+<!--        <el-input disabled v-model="form.wechat" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item :label="$t('member_labels.birthdate')" prop="name">
         <div class="block">
           <el-date-picker
             disabled
             v-model="form.birthday"
             type="date"
-            placeholder="选择日期">
+            :placeholder="$t('member_labels.selectDate')">
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.phoneNumber')" prop="name">
+      <el-form-item :label="$t('member_labels.phoneNumber')" label-width="120px" prop="name">
         <el-input disabled v-model="form.phoneNum" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.joiningDate')" prop="name">
+      <el-form-item :label="$t('tableHeaders.joiningDate')" label-width="110px" prop="name">
         <div class="block">
           <el-date-picker
             disabled
             v-model="form.enterTime"
             type="date"
-            placeholder="选择日期">
+            :placeholder="$t('member_labels.selectDate')">
           </el-date-picker>
         </div>
       </el-form-item>
@@ -40,45 +40,45 @@
       <el-form-item :label="$t('member_labels.height')" prop="name">
         <el-input disabled v-model="form.height" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('member_labels.channel')" prop="name" v-if="customerType === 0">
-        <template>
-          <el-select
-            disabled
-            v-model="form.channel"
-            collapse-tags
-            style="margin-left: 20px;"
-            placeholder="请选择">
-            <el-option
-              v-for="item in options"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </template>
-      </el-form-item>
-      <el-form-item :label="$t('member_labels.channel')" prop="name" v-else>
-        <template>
-          <el-select
-            disabled
-            v-model="form.channel"
-            collapse-tags
-            placeholder="请选择">
-            <el-option
-              v-for="item in optionsExperience"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </template>
-      </el-form-item>
-      <el-form-item v-if="form.channel ==='5'" label="朋友名字" prop="name">
-        <el-input disabled v-model="form.channelExt" class="tams-form-item"></el-input>
-      </el-form-item>
-      <el-form-item v-if="form.channel === '9'" label="具体地方" prop="name">
-        <el-input disabled v-model="form.channelExt" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('member_labels.channel')" prop="name" v-if="customerType === 0">-->
+<!--        <template>-->
+<!--          <el-select-->
+<!--            disabled-->
+<!--            v-model="form.channel"-->
+<!--            collapse-tags-->
+<!--            style="margin-left: 20px;"-->
+<!--            placeholder="请选择">-->
+<!--            <el-option-->
+<!--              v-for="item in options"-->
+<!--              :key="item.value"-->
+<!--              :label="item.label"-->
+<!--              :value="item.value">-->
+<!--            </el-option>-->
+<!--          </el-select>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item :label="$t('member_labels.channel')" prop="name" v-else>-->
+<!--        <template>-->
+<!--          <el-select-->
+<!--            disabled-->
+<!--            v-model="form.channel"-->
+<!--            collapse-tags-->
+<!--            placeholder="请选择">-->
+<!--            <el-option-->
+<!--              v-for="item in optionsExperience"-->
+<!--              :key="item.value"-->
+<!--              :label="item.label"-->
+<!--              :value="item.value">-->
+<!--            </el-option>-->
+<!--          </el-select>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.channel ==='5'" label="朋友名字" prop="name">-->
+<!--        <el-input disabled v-model="form.channelExt" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item v-if="form.channel === '9'" label="具体地方" prop="name">-->
+<!--        <el-input disabled v-model="form.channelExt" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
     </el-form>
 <!--    <div slot="footer" class="dialog-footer">-->
 <!--      <el-button @click="close">取消</el-button>-->
@@ -86,13 +86,13 @@
 <!--    </div>-->
     <template>
       <el-tabs v-model="activeName" @tab-click="handleClick">
-        <el-tab-pane label="会员卡信息" name="first" >
+        <el-tab-pane :label="$t('MembershipInfo')" name="first" >
           <div v-loading="loading">
                   <el-table stripe border :data="this.cardData">
-                    <el-table-column type="index" label="序号" width="50"></el-table-column>
+                    <el-table-column type="index" :label="$t('index')" width="70"></el-table-column>
                     <el-table-column
                       fixed="right"
-                      label="操作"
+                      :label="$t('member_labels.operations')"
                       width="240">
                       <template slot-scope="scope">
                         <el-switch v-model="scope.row.enableState"
@@ -105,35 +105,34 @@
                         <el-button style="margin-left: 5px" v-if="(scope.row.cancelTimes >= 4)" type="danger" size="mini" >惩罚</el-button>
                       </template>
                     </el-table-column>
-                    <el-table-column width="200" prop="createTIme" label="办卡日期"></el-table-column>
-                    <el-table-column width="200" prop="cardName" label="卡名称"></el-table-column>
-                    <el-table-column width="200" prop="teacherName" label="开单教练"></el-table-column>
-                    <el-table-column :formatter="getCardTypeForCardTable" label="类别" ></el-table-column>
-                    <el-table-column prop="paymentAmount" label="总付款金额" width="120px"></el-table-column>
-                    <el-table-column  :formatter="getTotal" label="总天数(次数、金额)" width="160px" ></el-table-column>
-                    <el-table-column  :formatter="getUsed" label="已用天数(次数、金额)" width="160px" ></el-table-column>
-                    <!--        <el-table-column prop="enterTime" label="已约未学金额"></el-table-column>-->
-                    <el-table-column  :formatter="getAvailable" label="剩余天数(次数、金额)" width="160px"></el-table-column>
-                    <el-table-column width="200" prop="cancelTimes" label="取消次数"></el-table-column>
-                    <el-table-column label="有效期">
-                      <el-table-column label="开始时间" width="200">
+                    <el-table-column width="200" prop="createTIme" :label="$t('IssuedDate')"></el-table-column>
+                    <el-table-column width="200" prop="cardName" :label="$t('CardName')"></el-table-column>
+                    <el-table-column width="80" prop="teacherName" :label="$t('trainer_labels.coach')"></el-table-column>
+                    <el-table-column :formatter="getCardTypeForCardTable" :label="$t('Category')" width="90px"></el-table-column>
+                    <el-table-column prop="paymentAmount" :label="$t('TotalPayment')" width="180px"></el-table-column>
+                    <el-table-column  :formatter="getTotal" :label="$t('Total')" width="220px" ></el-table-column>
+                    <el-table-column :formatter="getUsed" :label="$t('usedLabel')" width="160px"></el-table-column>
+                    <el-table-column :formatter="getAvailable" :label="$t('remainingLabel')" width="160px"></el-table-column>
+<!--                    <el-table-column width="200" prop="cancelTimes" :label="$t('cancelCountLabel')"></el-table-column>-->
+                    <el-table-column :label="$t('expiryLabel')">
+                      <el-table-column :label="$t('startDateLabel')" width="200">
                         <template slot-scope="scope">
                         <div class="block">
                           <el-date-picker
                             v-model="scope.row.openCardDay"  @change="updateOpenCardDay($event, scope.row.id)"
                             type="date" style="width: 140px;"
-                            placeholder="选择日期">
+                            :placeholder="$t('member_labels.selectDate')">
                           </el-date-picker>
                         </div>
                         </template>
                       </el-table-column>
-                      <el-table-column label="结束时间" width="200">
+                      <el-table-column :label="$t('schedule_labels.endDate')" width="200">
                         <template slot-scope="scope">
                         <div class="block">
                           <el-date-picker
                             v-model="scope.row.endCardDay" @change="updateEndCardDay($event, scope.row.id)"
                             type="date" style="width: 140px;"
-                            placeholder="选择日期">
+                            :placeholder="$t('member_labels.selectDate')">
                           </el-date-picker>
                         </div>
                         </template>
@@ -157,11 +156,11 @@
             </el-pagination>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="约课信息" name="second">
+        <el-tab-pane :label="$t('AppointInfo')" name="second">
           <div v-loading="loading">
             <el-table stripe border :data="this.courseInfo.records">
-              <el-table-column type="index" label="序号" width="50"></el-table-column>
-              <el-table-column :formatter="mapState"  label="状态" width="80">
+              <el-table-column  type="index" :label="$t('index')" width="70"></el-table-column>
+              <el-table-column :formatter="mapState"  :label="$t('schedule_labels.status')" width="80">
                 <template slot-scope="scope">
                   <el-button v-if="scope.row.attendance === 0 && scope.row.appointState == 1" disabled size="mini" type="warning">已约</el-button>
                   <el-button v-if="scope.row.attendance === 1" disabled size="mini" type="success">已学</el-button>
@@ -169,12 +168,12 @@
 
                 </template>
               </el-table-column>
-              <el-table-column prop="cardName" label="卡名称"></el-table-column>
-              <el-table-column :formatter="getCardTypeForAppointTable" label="类别" ></el-table-column>
-              <el-table-column prop="date" label="日期"></el-table-column>
-              <el-table-column :formatter="courseTImeFormatter" label="上课时间"></el-table-column>
-              <el-table-column prop="courseName" label="课程"></el-table-column>
-              <el-table-column prop="teacherName" label="教练"></el-table-column>
+              <el-table-column prop="cardName" :label="$t('index')"></el-table-column>
+              <el-table-column :formatter="getCardTypeForAppointTable" :label="$t('Category')" ></el-table-column>
+              <el-table-column prop="date" :label="$t('Date')"></el-table-column>
+              <el-table-column :formatter="courseTImeFormatter" :label="$t('CourseTime')"></el-table-column>
+              <el-table-column prop="courseName" :label="$t('Course')"></el-table-column>
+              <el-table-column prop="teacherName" :label="$t('trainer_labels.coach')"></el-table-column>
               <!--        <el-table-column prop="weight" label="孕前体重"></el-table-column>-->
               <!--        <el-table-column prop="height" label="身高"></el-table-column>-->
               <!--        <el-table-column  :formatter="getChannel" label="了解渠道"></el-table-column>-->
@@ -205,13 +204,13 @@
             </el-pagination>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="文件信息" name="third" v-if="this.customerType !== 1">
+        <el-tab-pane :label="$t('FileInfo')" name="third" v-if="this.customerType !== 1">
           <div v-loading="loading">
             <el-table stripe border :data="fileList">
-              <el-table-column type="index" label="序号" width="50"></el-table-column>
-              <el-table-column prop="fileName" label="文件名称"></el-table-column>
+              <el-table-column type="index" :label="$t('index')" width="70"></el-table-column>
+              <el-table-column prop="fileName" :label="$t('FileName')"></el-table-column>
               <!--        <el-table-column prop="url" label="文件地址"></el-table-column>-->
-              <el-table-column  label="操作">
+              <el-table-column  :label="$t('member_labels.operations')">
                 <template slot-scope="scope">
                   <el-button
                     style="margin-right: 10px;"

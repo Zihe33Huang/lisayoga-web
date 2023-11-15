@@ -1,5 +1,5 @@
 <template>
-  <el-dialog :title="this.customerType === 1 ? '验券':'开卡'" width="450px"
+  <el-dialog :title="$t('IssueCard.IssueCard')" width="750px"
              :close-on-click-modal="false"
              :close-on-press-escape="false"
              :visible.sync="dialogVisible"
@@ -14,10 +14,10 @@
 <!--          </el-date-picker>-->
 <!--        </div>-->
 <!--      </el-form-item>-->
-      <el-form-item label="卡类别" prop="name" v-if="customerType === 1">
+      <el-form-item :label="$t('IssueCard.CardType')" prop="name" v-if="customerType === 1">
         <el-input v-model="form.cardRuleId" :value="13" placeholder="体验卡" class="tams-form-item" disabled></el-input>
       </el-form-item>
-      <el-form-item label="卡类别" prop="name" v-else>
+      <el-form-item :label="$t('IssueCard.CardType')" prop="name" v-else>
         <div class="block">
           <el-cascader
             :show-all-levels="false"
@@ -27,41 +27,41 @@
             @change="handleChange"></el-cascader>
         </div>
       </el-form-item>
-      <el-form-item label="支付金额" prop="name">
-        <el-input v-model="form.paymentAmount" class="tams-form-item"></el-input>
+      <el-form-item :label="$t('IssueCard.PaymentAmount')" prop="name" label-width="150px">
+        <el-input v-model="form.paymentAmount" class="tams-form-item" ></el-input>
       </el-form-item>
-      <el-form-item label="有效期" prop="name" v-if="customerType !== 1">
+      <el-form-item :label="$t('IssueCard.ValidityPeriod')" label-width="100px" prop="name" v-if="customerType !== 1">
         <el-input style="width: 80px" v-model="form.validityPeriod" class="tams-form-item"></el-input>
-        <el-button style="margin-left: 10px;" size="mini" type="primary" round @click="yearCard">年卡</el-button>
-        <el-button size="mini" type="primary" round @click="halfYearCard">半年卡</el-button>
-        <el-button size="mini" type="primary" round @click="seasonCard">季卡</el-button>
-        <el-button size="mini" type="primary" round @click="monthCard">月卡</el-button>
+        <el-button style="margin-left: 10px;" size="mini" type="primary" round @click="yearCard">{{$t('IssueCard.YearCard')}}</el-button>
+        <el-button size="mini" type="primary" round @click="halfYearCard">{{$t('IssueCard.HalfYearCard')}}</el-button>
+        <el-button size="mini" type="primary" round @click="seasonCard">{{$t('IssueCard.SeasonCard')}}</el-button>
+        <el-button size="mini" type="primary" round @click="monthCard">{{$t('IssueCard.MonthCard')}}</el-button>
       </el-form-item>
-      <el-form-item label="次数" prop="name" v-if="this.form.cardRuleId != null && this.form.cardRuleId[0] == 'number'">
+      <el-form-item :label="$t('IssueCard.Number')" prop="name" v-if="this.form.cardRuleId != null && this.form.cardRuleId[0] == 'number'">
         <el-input style="width: 80px" v-model="form.cardTimes" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item label="起始日期" prop="name" v-if="customerType !== 1" >
+      <el-form-item :label="$t('IssueCard.StartDate')" prop="name" v-if="customerType !== 1" >
         <div class="block">
           <el-date-picker
             v-model="form.startTime"
             type="date"
-            placeholder="选择日期">
+            :placeholder="$t('IssueCard.SelectDate')">
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item label-width="140px" label="是否为本馆专用卡" prop="name" v-if="customerType !== 1">
-        <template>
-          <el-radio v-model="form.isSpecialSelf" label="true">是</el-radio>
-          <el-radio v-model="form.isSpecialSelf" label="false">否</el-radio>
-        </template>
-      </el-form-item>
-      <el-form-item label="支付方式" prop="name" v-if="customerType !== 1">
+<!--      <el-form-item label-width="140px" :label="$t('IssueCard.Gym-SpecificCard')" prop="name" v-if="customerType !== 1">-->
+<!--        <template>-->
+<!--          <el-radio v-model="form.isSpecialSelf" label="true">是</el-radio>-->
+<!--          <el-radio v-model="form.isSpecialSelf" label="false">否</el-radio>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
+      <el-form-item :label="$t('IssueCard.PaymentMethod')"  label-width="120px" prop="name" v-if="customerType !== 1">
         <template>
           <el-select
             v-model="form.payMethod"
             collapse-tags
             style="margin-left: 20px;"
-            placeholder="请选择">
+            :placeholder="$t('IssueCard.PleaseSelect')">
             <el-option
               v-for="item in payWay"
               :key="item.value"
@@ -71,19 +71,19 @@
           </el-select>
         </template>
       </el-form-item>
-      <el-form-item label="渠道费用" prop="name">
-        <el-input style="width: 80px" v-model="form.channelFee"  @input="inputCalc" class="tams-form-item"></el-input>
-      </el-form-item>
-      <el-form-item label="实际入账" prop="name">
-        <el-input style="width: 80px" v-model="form.actualAmount"  class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('IssueCard.ChannelCosts')" prop="name">-->
+<!--        <el-input style="width: 80px" v-model="form.channelFee"  @input="inputCalc" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
+<!--      <el-form-item :label="$t('IssueCard.ActualRevenue')" prop="name">-->
+<!--        <el-input style="width: 80px" v-model="form.actualAmount"  class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
 <!--      <el-form-item label="是否赠送" prop="isFree" v-if="customerType === 1">-->
 <!--        <template>-->
 <!--          <el-radio v-model="form.isFree" label="1">是</el-radio>-->
 <!--          <el-radio v-model="form.isFree" label="0">否</el-radio>-->
 <!--        </template>-->
 <!--      </el-form-item>-->
-      <el-form-item label="开单教练" prop="name" v-if="customerType !== 1">
+      <el-form-item :label="$t('IssueCard.BillingTrainer')" label-width="100px" prop="name" v-if="customerType !== 1">
         <template>
           <el-select v-model="teacherId" placeholder="请选择">
             <el-option
@@ -97,8 +97,8 @@
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="close">取消</el-button>
-      <el-button type="primary" :loading="submitBtnLoading" @click="submit">确定</el-button>
+      <el-button @click="close">{{$t('buttons.cancel')}}</el-button>
+      <el-button type="primary" :loading="submitBtnLoading" @click="submit">{{$t('buttons.confirm')}}</el-button>
     </div>
   </el-dialog>
 </template>

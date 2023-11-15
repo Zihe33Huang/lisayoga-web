@@ -17,14 +17,14 @@
           :file-list="fileList"
           multiple>
           <i class="el-icon-upload"></i>
-          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-          <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+          <div class="el-upload__text">{{$t('tips')}}<em>{{$t('ClickUpload')}}</em></div>
+          <div class="el-upload__tip" slot="tip">{{$t('fileLimit')}}</div>
         </el-upload>
       </el-form-item>
     </el-form>
     <div slot="footer" class="dialog-footer">
-      <el-button @click="close">取消</el-button>
-      <el-button type="primary" :loading="submitBtnLoading" @click="submit">确定</el-button>
+      <el-button @click="close">{{$t('buttons.cancel')}}</el-button>
+      <el-button type="primary" :loading="submitBtnLoading" @click="submit">{{$t('buttons.confirm')}}</el-button>
     </div>
   </el-dialog>
 </template>
