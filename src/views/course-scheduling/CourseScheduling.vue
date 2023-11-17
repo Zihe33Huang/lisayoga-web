@@ -25,7 +25,7 @@
           </el-form>
         </el-col>
         <el-col :span="4">
-          <el-button type="primary" size="small" style="float: right" @click="exportCourseSchedulingVisible=true">{{$t('schedule_labels.export')}}</el-button>
+<!--          <el-button type="primary" size="small" style="float: right" @click="exportCourseSchedulingVisible=true">{{$t('schedule_labels.export')}}</el-button>-->
           <el-button type="primary" size="small" style="float: right; margin-right: 10px;" @click="saveBatchCourseSchedulingVisible=true">{{$t('schedule_labels.schedule')}}</el-button>
         </el-col>
       </el-row>

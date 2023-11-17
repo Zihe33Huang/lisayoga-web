@@ -17,24 +17,24 @@
     <div v-loading="loading">
       <el-table stripe border :data="data.records">
         <el-table-column type="index" :label="$t('index')" width="60"></el-table-column>
-        <el-table-column :prop="$t('trainer_labels.name')" :label="$t('trainer_labels.name')"></el-table-column>
-        <el-table-column :prop="$t('trainer_labels.nickname')" :label="$t('trainer_labels.nickname')"></el-table-column>
+        <el-table-column prop="name" :label="$t('trainer_labels.name')"></el-table-column>
+<!--        <el-table-column prop="$t('trainer_labels.nickname')" :label="$t('trainer_labels.nickname')"></el-table-column>-->
         <el-table-column :formatter="teacherTpe" :label="$t('trainer_labels.type')"></el-table-column>
-        <el-table-column :prop="$t('trainer_labels.age')" :label="$t('trainer_labels.age')"></el-table-column>
-        <el-table-column :prop="$t('trainer_labels.entryDate')" :label="$t('trainer_labels.entryDate')"></el-table-column>
-        <el-table-column :prop="$t('trainer_labels.currentMonthSalary')" :label="$t('trainer_labels.currentMonthSalary')">
-          <template slot-scope="scope">
-            <el-button v-if="scope.row.isPaidThisMonth === '已结算'" round="round"  disabled size="mini" type="success">{{scope.row.isPaidThisMonth}}</el-button>
-            <el-button v-if="scope.row.isPaidThisMonth === '未结算'" round="round"   disabled size="mini" type="danger">{{scope.row.isPaidThisMonth}}</el-button>
-          </template>
-        </el-table-column>
-        <el-table-column :prop="$t('trainer_labels.previousMonthSalary')" :label="$t('trainer_labels.previousMonthSalary')">
-          <template slot-scope="scope">
-            <el-button v-if="scope.row.isPaidLastMonth === '已结算'"  round="round" disabled size="mini" type="success">{{scope.row.isPaidLastMonth}}</el-button>
-            <el-button v-if="scope.row.isPaidLastMonth === '未结算'" round="round"  disabled size="mini" type="danger">{{scope.row.isPaidLastMonth}}</el-button>
-          </template>
-        </el-table-column>
-        <el-table-column :prop="$t('trainer_labels.phoneNumber')" :label="$t('trainer_labels.phoneNumber')"></el-table-column>
+        <el-table-column prop="age" :label="$t('trainer_labels.age')"></el-table-column>
+        <el-table-column prop="enterTime" :label="$t('trainer_labels.entryDate')"></el-table-column>
+<!--        <el-table-column prop="$t('trainer_labels.currentMonthSalary')" :label="$t('trainer_labels.currentMonthSalary')">-->
+<!--          <template slot-scope="scope">-->
+<!--            <el-button v-if="scope.row.isPaidThisMonth === '已结算'" round="round"  disabled size="mini" type="success">{{scope.row.isPaidThisMonth}}</el-button>-->
+<!--            <el-button v-if="scope.row.isPaidThisMonth === '未结算'" round="round"   disabled size="mini" type="danger">{{scope.row.isPaidThisMonth}}</el-button>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
+<!--        <el-table-column :prop="$t('trainer_labels.previousMonthSalary')" :label="$t('trainer_labels.previousMonthSalary')">-->
+<!--          <template slot-scope="scope">-->
+<!--            <el-button v-if="scope.row.isPaidLastMonth === '已结算'"  round="round" disabled size="mini" type="success">{{scope.row.isPaidLastMonth}}</el-button>-->
+<!--            <el-button v-if="scope.row.isPaidLastMonth === '未结算'" round="round"  disabled size="mini" type="danger">{{scope.row.isPaidLastMonth}}</el-button>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
+        <el-table-column prop="phoneNum" :label="$t('trainer_labels.phoneNumber')"></el-table-column>
         <el-table-column
           fixed="right"
           :label="$t('trainer_labels.action')"
@@ -43,7 +43,7 @@
             <el-button type="primary" size="mini" @click="showUpdate(scope.row.id)">{{ $t('actions.edit') }}</el-button>
             <el-button type="primary" size="mini" @click="showDetail(scope.row.id)">{{ $t('detail') }}</el-button>
             <el-button type="primary" size="mini" @click="showConfig(scope.row.id)">{{ $t('actions.configureHourlyRate') }}</el-button>
-            <el-button type="primary" size="mini" @click="showCourse(scope.row.id, scope.row.type)">{{ $t('actions.salaryStatistics') }}</el-button>
+<!--            <el-button type="primary" size="mini" @click="showCourse(scope.row.id, scope.row.type)">{{ $t('actions.salaryStatistics') }}</el-button>-->
             <el-switch v-model="scope.row.enableState"
                        :active-value="1" :inactive-value="2"
                        active-color="#13ce66" inactive-color="#ff4949"

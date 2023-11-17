@@ -53,7 +53,7 @@
     </div>
     <el-table stripe border :data="data" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="40"></el-table-column>
-      <el-table-column type="index" :label="$t('schedule_labels.serialNumber')" width="50"></el-table-column>
+      <el-table-column type="index" :label="$t('index')" width="60"></el-table-column>
       <el-table-column prop="date" :label="$t('schedule_labels.date')" width="110"></el-table-column>
       <el-table-column prop="attendTime" :label="$t('schedule_labels.startTime')" width="90"></el-table-column>
       <el-table-column prop="finishTime" :label="$t('schedule_labels.endTime')" width="90"></el-table-column>

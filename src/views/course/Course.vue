@@ -86,36 +86,16 @@ export default {
     options () {
       return [
         {
-          value: '123',
-          label: this.$t('courseList.regularGroupCard')
+          value: '1',
+          label: this.$t('courseList.timeCard')
         },
         {
-          value: '4',
-          label: this.$t('courseList.vipGroupCard')
+          value: '2',
+          label: this.$t('courseList.visitCard')
         },
         {
-          value: '5',
-          label: this.$t('courseList.regularPersonalTrainingCard')
-        },
-        {
-          value: '6',
-          label: this.$t('courseList.pilatesEquipmentPersonalTrainingCard')
-        },
-        {
-          value: '7',
-          label: this.$t('courseList.pilatesEquipmentGroupCard')
-        },
-        {
-          value: '8',
+          value: '3',
           label: this.$t('courseList.rechargeCard')
-        },
-        {
-          value: '9',
-          label: this.$t('courseList.bigRechargePackageCard')
-        },
-        {
-          value: '10',
-          label: this.$t('courseList.pregnancyCard')
         }
       ]
     }

@@ -35,7 +35,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.courseDescription')"
-        prop="desc"
+        prop="desc"   label-width="130px"
         class="tams-form-label"
       >
         <el-input
@@ -46,7 +46,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.availableCardTypes')"
-        label-width="100px"
+        label-width="120px"
         class="tams-form-label"
       >
         <template>
@@ -69,13 +69,13 @@
       <el-form-item
         :label="$t('course_labels.maximumCapacity')"
         prop="maximum"
-        class="tams-form-label"
+        class="tams-form-label" label-width="130px"
       >
         <el-input v-model="form.maximum" class="tams-form-item"></el-input>
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.minimumEnrollment')"
-        prop="minimum"
+        prop="minimum"  label-width="140px"
         class="tams-form-label"
       >
         <el-input v-model="form.minimum" class="tams-form-item"></el-input>
@@ -89,7 +89,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.backgroundColor')"
-        prop="backgroundColor"
+        prop="backgroundColor"  label-width="140px"
       >
         <el-color-picker v-model="form.backgroundColor" :predefine="predefineColors">
         </el-color-picker>

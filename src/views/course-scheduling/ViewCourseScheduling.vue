@@ -22,7 +22,7 @@
         <el-form-item :label="$t('schedule_labels.finishTime')">
           <el-input v-model="form.finishTime" class="tams-form-item" readonly></el-input>
         </el-form-item>
-        <el-form-item :label="$t('schedule_labels.cardType')">
+        <el-form-item :label="$t('schedule_labels.cardType')" >
           <el-input v-model="form.cardTypeList" class="tams-form-item" readonly></el-input>
         </el-form-item>
         <el-form-item :label="$t('schedule_labels.capacity')">
@@ -44,10 +44,10 @@
               </el-button>
             </template>
           </el-table-column>
-          <el-table-column prop="customerId" :label="$t('schedule_labels.studentId')" width="50"></el-table-column>
+          <el-table-column prop="customerId" :label="$t('schedule_labels.studentId')" width="100"></el-table-column>
           <el-table-column prop="cardName" :label="$t('schedule_labels.cardName')" width="180px"></el-table-column>
           <el-table-column prop="name" :label="$t('schedule_labels.name')"></el-table-column>
-          <el-table-column :label="$t('schedule_labels.memberDetails')">
+          <el-table-column :label="$t('schedule_labels.memberDetails')" width="130">
             <template slot-scope="scope">
               <el-button size="mini" type="primary" @click="showDetail(scope.row.customerId)">{{$t('schedule_labels.details') }}</el-button>
             </template>

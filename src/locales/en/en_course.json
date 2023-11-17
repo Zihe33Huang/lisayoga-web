@@ -35,16 +35,12 @@
     "courseDuration": "Course Duration"
   },
   "courseList": {
-    "regularGroupCard": "Regular Group Card",
-    "vipGroupCard": "VIP Group Card",
-    "regularPersonalTrainingCard": "Regular Personal Training Card",
-    "pilatesEquipmentPersonalTrainingCard": "Pilates Equipment Personal Training Card",
-    "pilatesEquipmentGroupCard": "Pilates Equipment Group Card",
-    "rechargeCard": "Recharge Card",
-    "bigRechargePackageCard": "Big Recharge Package Card",
-    "pregnancyCard": "Pregnancy Card"
+    "timeCard": "Time Card",
+    "visitCard": "Visit Card",
+    "rechargeCard": "Recharge Card"
   },
   "placeholders": {
-    "select": "Select"
+    "select": "Select",
+    "enterName": "Enter Name"
   }
 }

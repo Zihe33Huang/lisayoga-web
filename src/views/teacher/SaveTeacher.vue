@@ -8,9 +8,9 @@
       <el-form-item :label="$t('trainer_labels.name')" prop="name" :placeholder="$t('trainer_labels.name')">
         <el-input v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.nickname')" prop="name" :placeholder="$t('trainer_labels.nickname')">
-        <el-input v-model="form.akaName" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('trainer_labels.nickname')" prop="name" :placeholder="$t('trainer_labels.nickname')">-->
+<!--        <el-input v-model="form.akaName" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item :label="$t('trainer_labels.type')" prop="name" :placeholder="$t('trainer_labels.select')">
         <template>
           <el-select
@@ -54,9 +54,9 @@
       <el-form-item :label="$t('trainer_labels.basicSalary')" prop="name" :placeholder="$t('trainer_labels.basicSalary')">
         <el-input v-model="form.basicSalary" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.foodCarAllowance')" prop="name" :placeholder="$t('trainer_labels.foodCarAllowance')">
-        <el-input v-model="form.allowance" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('trainer_labels.foodCarAllowance')" prop="name" :placeholder="$t('trainer_labels.foodCarAllowance')">-->
+<!--        <el-input v-model="form.allowance" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item :label="$t('trainer_labels.commissionRate')" prop="name" :placeholder="$t('trainer_labels.commissionRate')">
         <el-input style="width: 70px" v-model="form.royaltyRate" class="tams-form-item"></el-input>%
       </el-form-item>

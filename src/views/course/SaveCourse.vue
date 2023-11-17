@@ -1,7 +1,7 @@
 <template>
   <el-dialog
     :title="$t('add')"
-    width="450px"
+    width="550px"
     :close-on-click-modal="false"
     :close-on-press-escape="false"
     :visible.sync="dialogVisible"
@@ -24,7 +24,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.courseDescription')"
-        prop="desc"
+        prop="desc" label-width="130px"
         class="tams-form-label"
       >
         <el-input
@@ -35,7 +35,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.availableCardTypes')"
-        label-width="100px"
+        label-width="120px"
         class="tams-form-label"
       >
         <template>
@@ -44,7 +44,7 @@
             multiple
             collapse-tags
             style="margin-left: 20px;"
-            :placeholder="$t('placeholders.select')"
+            :placeholder="$t('member_labels.select')"
           >
             <el-option
               v-for="item in options"
@@ -57,14 +57,14 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.maximumCapacity')"
-        prop="maximum"
+        prop="maximum" label-width="130px"
         class="tams-form-label"
       >
         <el-input v-model="form.maximum" class="tams-form-item"></el-input>
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.minimumEnrollment')"
-        prop="minimum"
+        prop="minimum"  label-width="140px"
         class="tams-form-label"
       >
         <el-input v-model="form.minimum" class="tams-form-item"></el-input>
@@ -79,7 +79,7 @@
       <el-form-item
         :label="$t('course_labels.courseDurationMinutes')"
         prop="duration"
-        class="tams-form-label"
+        class="tams-form-label" label-width="180px"
       >
         <el-input-number
           v-model="form.duration"
@@ -91,7 +91,7 @@
       </el-form-item>
       <el-form-item
         :label="$t('course_labels.backgroundColor')"
-        prop="backgroundColor"
+        prop="backgroundColor"  label-width="140px"
         class="tams-form-label"
       >
         <el-color-picker v-model="form.backgroundColor" :predefine="predefineColors">
@@ -132,31 +132,20 @@ export default {
         ]
       },
       submitBtnLoading: false,
-      options: [{
-        value: 123,
-        label: '常规团课卡'
-      }, {
-        value: 4,
-        label: 'vip团课卡'
-      }, {
-        value: 5,
-        label: '常规私教卡'
-      }, {
-        value: 6,
-        label: '普拉提器械私教卡'
-      }, {
-        value: 7,
-        label: '普拉提器械团课卡'
-      }, {
-        value: 8,
-        label: '充值卡'
-      }, {
-        value: 9,
-        label: '大礼包充值卡'
-      }, {
-        value: 10,
-        label: '孕产卡'
-      }],
+      options: [
+        {
+          value: '1',
+          label: this.$t('courseList.timeCard')
+        },
+        {
+          value: '2',
+          label: this.$t('courseList.visitCard')
+        },
+        {
+          value: '3',
+          label: this.$t('courseList.rechargeCard')
+        }
+      ],
       value: []
     }
   },

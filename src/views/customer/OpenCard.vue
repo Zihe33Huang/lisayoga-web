@@ -55,22 +55,22 @@
 <!--          <el-radio v-model="form.isSpecialSelf" label="false">否</el-radio>-->
 <!--        </template>-->
 <!--      </el-form-item>-->
-      <el-form-item :label="$t('IssueCard.PaymentMethod')"  label-width="120px" prop="name" v-if="customerType !== 1">
-        <template>
-          <el-select
-            v-model="form.payMethod"
-            collapse-tags
-            style="margin-left: 20px;"
-            :placeholder="$t('IssueCard.PleaseSelect')">
-            <el-option
-              v-for="item in payWay"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value">
-            </el-option>
-          </el-select>
-        </template>
-      </el-form-item>
+<!--      <el-form-item :label="$t('IssueCard.PaymentMethod')"  label-width="120px" prop="name" v-if="customerType !== 1">-->
+<!--        <template>-->
+<!--          <el-select-->
+<!--            v-model="form.payMethod"-->
+<!--            collapse-tags-->
+<!--            style="margin-left: 20px;"-->
+<!--            :placeholder="$t('IssueCard.PleaseSelect')">-->
+<!--            <el-option-->
+<!--              v-for="item in payWay"-->
+<!--              :key="item.value"-->
+<!--              :label="item.label"-->
+<!--              :value="item.value">-->
+<!--            </el-option>-->
+<!--          </el-select>-->
+<!--        </template>-->
+<!--      </el-form-item>-->
 <!--      <el-form-item :label="$t('IssueCard.ChannelCosts')" prop="name">-->
 <!--        <el-input style="width: 80px" v-model="form.channelFee"  @input="inputCalc" class="tams-form-item"></el-input>-->
 <!--      </el-form-item>-->
@@ -122,34 +122,6 @@ export default {
   },
   data () {
     return {
-      payWay: [{
-        value: '0',
-        label: '现金'
-      }, {
-        value: '1',
-        label: '支付宝'
-      }, {
-        value: '2',
-        label: '微信'
-      }, {
-        value: '3',
-        label: '大众点评团购'
-      }, {
-        value: '4',
-        label: '刷卡-信用卡'
-      }, {
-        value: '5',
-        label: '刷卡-储蓄卡'
-      }, {
-        value: '6',
-        label: '支付宝商家收款'
-      }, {
-        value: '7',
-        label: '大众点评扫码'
-      }, {
-        value: '8',
-        label: '收钱吧'
-      }],
       radio: true,
       cardTypeOptions: [{
         value: 'time',
@@ -178,23 +150,8 @@ export default {
         value: 'number',
         label: '次卡',
         children: [{
-          value: '4',
-          label: 'vip团课卡'
-        }, {
           value: '5',
           label: '常规私教卡'
-        }, {
-          value: '6',
-          label: '普拉提器械私教卡'
-        }, {
-          value: '7',
-          label: '普拉提器械团课卡'
-        }, {
-          value: '10',
-          label: '孕产卡'
-        }, {
-          value: '12',
-          label: '常规团课卡'
         }]
       },
       {
@@ -203,12 +160,6 @@ export default {
         children: [{
           value: '8',
           label: '普通充值卡'
-        }, {
-          value: '9',
-          label: '大礼包充值卡'
-        }, {
-          value: '15',
-          label: '孕产充值卡'
         }]
       }
       ],
@@ -231,40 +182,12 @@ export default {
         ]
       },
       submitBtnLoading: false,
-      options: [{
-        value: '0',
-        label: '大众点评'
-      }, {
-        value: '1',
-        label: '传单'
-      }, {
-        value: '2',
-        label: '微信群'
-      }, {
-        value: '3',
-        label: '微信朋友圈'
-      }, {
-        value: '4',
-        label: '搜索引擎'
-      }, {
-        value: '5',
-        label: '朋友介绍'
-      }, {
-        value: '6',
-        label: '母婴论坛'
-      }, {
-        value: '7',
-        label: '合作月子中心'
-      }, {
-        value: '8',
-        label: '其他合作伙伴'
-      }],
       teachers: [],
       teacherId: ''
     }
   },
   methods: {
-    ...mapActions(['SaveCustomer', 'openCard', 'GetTeacherPage']),
+    ...mapActions(['SaveCustomer', 'openCard', 'GetTeacherPage', 'GetCardTypes']),
     handleClose (done) {
       this.$refs.form.resetFields()
       this.$emit('on-close')
@@ -360,12 +283,62 @@ export default {
       }).catch(() => {
         this.loading = false
       })
+    },
+    searchCardType () {
+      this.GetCardTypes().then(res => {
+        if (res) {
+          this.cardTypeOptions = this.convertToCardTypeOptions(res)
+        }
+      }).catch(() => {
+      })
+    },
+    convertToCardTypeOptions (data) {
+      const cardTypeOptions = []
+
+      // 循环遍历每种类型的卡
+      data.forEach(cardType => {
+        const cardOption = {
+          value: '',
+          label: '',
+          children: []
+        }
+
+        // 根据卡的类型设置 value 和 label
+        switch (cardType.type) {
+          case 1:
+            cardOption.value = 'time'
+            cardOption.label = '时长卡'
+            break
+          case 2:
+            cardOption.value = 'number'
+            cardOption.label = '次卡'
+            break
+          case 3:
+            cardOption.value = 'recharge'
+            cardOption.label = '充值卡'
+            break
+          default:
+            break
+        }
+
+        // 处理每种卡的子选项
+        cardType.list.forEach(card => {
+          const childOption = {
+            value: card.id,
+            label: card.name
+          }
+          cardOption.children.push(childOption)
+        })
+        cardTypeOptions.push(cardOption)
+      })
+      return cardTypeOptions
     }
   },
   watch: {
     visible (val) {
       if (val) {
         this.searchTeacher()
+        this.searchCardType()
         this.dialogVisible = val
         console.log(this.customerType)
       }

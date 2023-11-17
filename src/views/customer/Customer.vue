@@ -18,7 +18,7 @@
     <div v-loading="loading">
       <div style="margin-bottom: 5px;">
         <i style="margin-left: 15px;" class="el-icon-search" ></i>
-        <el-input :placeholder="$t('placeholders.enterMemberName')" v-model="name" style="width: 150px;margin-left: 15px"/>
+        <el-input  v-model="name" style="width: 150px;margin-left: 15px"/>
         <el-button @click="fetchData" style="margin-left: 3px">{{$t('buttons.search')}}</el-button>
         <el-button style="margin-right: 5px;" type="primary" size="small" id="HideOps" @click="showOperationFunc">{{$t('buttons.hideOperation')}}</el-button>
       </div>
@@ -34,7 +34,7 @@
         <el-table-column prop="name" :label="$t('tableHeaders.name')"></el-table-column>
 <!--        <el-table-column prop="wechat" :label="$t('tableHeaders.wechatNumber')"></el-table-column>-->
         <el-table-column prop="age" :label="$t('tableHeaders.age')"></el-table-column>
-        <el-table-column prop="enterTime" :label="$t('tableHeaders.joiningDate')"></el-table-column>
+        <el-table-column prop="enterTime" :label="$t('tableHeaders.joiningDate')" width="110px"></el-table-column>
         <el-table-column prop="phoneNum" :label="$t('tableHeaders.phoneNumber')"></el-table-column>
         <el-table-column prop="weight" :label="$t('tableHeaders.weight')"></el-table-column>
         <el-table-column prop="height" :label="$t('tableHeaders.height')"></el-table-column>

@@ -10,7 +10,7 @@
           <el-button @click="search" style="margin-left: 3px">{{$t('buttons.search')}}</el-button>
         </div>
         <el-table stripe border :data="this.data.records">
-          <el-table-column type="index" :label="$t('index')" width="50"></el-table-column>
+          <el-table-column type="index" :label="$t('index')" width="60"></el-table-column>
           <el-table-column prop="courseName" :label="$t('trainer_labels.courseName')" width="180px"></el-table-column>
           <el-table-column prop="courseFee" :label="$t('trainer_labels.courseFee')" width="160px">
             <template slot-scope="scope">

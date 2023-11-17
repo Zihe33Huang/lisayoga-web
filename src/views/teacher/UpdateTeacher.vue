@@ -1,5 +1,5 @@
 <template>
-  <el-dialog :title="$t('actions.edit')" width="450px"
+  <el-dialog :title="$t('actions.edit')" width="550px"
              :close-on-click-modal="false"
              :close-on-press-escape="false"
              :visible.sync="dialogVisible"
@@ -8,9 +8,9 @@
       <el-form-item :label="$t('trainer_labels.name')" prop="name">
         <el-input v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.nickname')" prop="name">
-        <el-input v-model="form.akaName" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('trainer_labels.nickname')" prop="name">-->
+<!--        <el-input v-model="form.akaName" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item :label="$t('trainer_labels.type')" prop="name">
         <template>
           <el-select
@@ -27,7 +27,7 @@
           </el-select>
         </template>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.profilePicture')" prop="name">
+      <el-form-item :label="$t('trainer_labels.profilePicture')" label-width="110px" prop="name">
         <el-upload
           class="upload-demo"  ref="upload"
           action="http://localhost:12010/teacher"
@@ -48,19 +48,19 @@
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.phoneNumber')" prop="name">
+      <el-form-item :label="$t('trainer_labels.phoneNumber')" label-width="120px" prop="name">
         <el-input v-model="form.phoneNum" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.basicSalary')" prop="name">
+      <el-form-item :label="$t('trainer_labels.basicSalary')" label-width="100px" prop="name">
         <el-input v-model="form.basicSalary" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.allowance')" prop="name">
+      <el-form-item :label="$t('trainer_labels.allowance')" label-width="90px" prop="name">
         <el-input v-model="form.allowance" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.commissionRate')" prop="name">
+      <el-form-item :label="$t('trainer_labels.commissionRate')" label-width="140px" prop="name">
         <el-input style="width: 70px" v-model="form.royaltyRate" class="tams-form-item"></el-input>%
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.entryTime')" prop="name">
+      <el-form-item :label="$t('trainer_labels.entryTime')" label-width="90px" prop="name">
         <div class="block">
           <el-date-picker
             v-model="form.enterTime"
@@ -69,10 +69,10 @@
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.yogaQualification')" prop="name">
+      <el-form-item :label="$t('trainer_labels.yogaQualification')" label-width="110px" prop="name">
         <el-input type="textarea" v-model="form.qualification" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.personalIntroduction')" prop="name">
+      <el-form-item :label="$t('trainer_labels.personalIntroduction')" label-width="100px" prop="name">
         <el-input v-model="form.introduction" type="textarea" class="tams-form-item"></el-input>
       </el-form-item>
     </el-form>
@@ -104,7 +104,7 @@ export default {
       dialogVisible: false,
       teacherType: [{
         value: 0,
-        label: '全职'
+        label: '$t("trainer_labels.fulltime")'
       }, {
         value: 1,
         label: '兼职'

@@ -16,7 +16,7 @@
           <el-date-picker
             v-model="form.birthday"
             type="date"
-            placeholder="$t('member_labels.selectDate')">
+            :placeholder="$t('member_labels.selectDate')">
           </el-date-picker>
         </div>
       </el-form-item>

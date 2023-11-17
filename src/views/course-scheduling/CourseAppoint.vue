@@ -1,5 +1,5 @@
 <template>
-  <el-dialog title="Appointment" width="800px"
+  <el-dialog title="Appointment" width="900px"
              :close-on-click-modal="false"
              :close-on-press-escape="false"
              :visible.sync="dialogVisible"
@@ -10,8 +10,8 @@
         <el-table-column type="index" label="No." width="50"></el-table-column>
         <el-table-column prop="cardName" label="Card Name" width="180"></el-table-column>
         <el-table-column :formatter="getCardType" label="Category"></el-table-column>
-        <el-table-column prop="customerName" label="Member Name"></el-table-column>
-        <el-table-column :formatter="getAvailable" label="Remaining Days (Visits, Amount)" width="160px"></el-table-column>
+        <el-table-column prop="customerName" label="Name"></el-table-column>
+        <el-table-column :formatter="getAvailable" label="Remaining Days (Visits, Amount)" width="250px"></el-table-column>
         <!--        <el-table-column label="Membership Card" width="200px">-->
         <!--          <template slot-scope="scope">-->
         <!--          <el-select  placeholder="Please select">-->

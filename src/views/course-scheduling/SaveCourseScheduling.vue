@@ -9,8 +9,8 @@
         <el-input v-model="form.date" class="tams-form-item" disabled></el-input>
       </el-form-item>
       <br/>
-      <el-form-item :label="$t('schedule_labels.classroom')" prop="classroomId">
-        <el-select v-model="form.classroomId" class="tams-form-item">
+      <el-form-item :label="$t('schedule_labels.classroom')" label-width="100px" prop="classroomId">
+        <el-select v-model="form.classroomId"  class="tams-form-item">
           <el-option v-for="item in classroomData" :key="item.id" :label="item.name" :value="item.id">
           </el-option>
         </el-select>

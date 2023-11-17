@@ -35,14 +35,9 @@
     "courseDuration": "课程时长"
   },
   "courseList": {
-    "regularGroupCard": "常规团课卡",
-    "vipGroupCard": "VIP团课卡",
-    "regularPersonalTrainingCard": "常规私教卡",
-    "pilatesEquipmentPersonalTrainingCard": "普拉提器械私教卡",
-    "pilatesEquipmentGroupCard": "普拉提器械团课卡",
-    "rechargeCard": "充值卡",
-    "bigRechargePackageCard": "大充值套餐卡",
-    "pregnancyCard": "孕妇瑜伽卡"
+    "timeCard": "时长卡",
+    "visitCard": "次卡",
+    "rechargeCard": "充值卡"
   },
   "placeholders": {
     "select": "请选择"

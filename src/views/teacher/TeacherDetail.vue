@@ -8,9 +8,9 @@
       <el-form-item :label="$t('trainer_labels.name')" prop="name">
         <el-input disabled v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.nickname')" prop="name">
-        <el-input disabled v-model="form.akaName" class="tams-form-item"></el-input>
-      </el-form-item>
+<!--      <el-form-item :label="$t('trainer_labels.nickname')" prop="name">-->
+<!--        <el-input disabled v-model="form.akaName" class="tams-form-item"></el-input>-->
+<!--      </el-form-item>-->
       <el-form-item :label="$t('trainer_labels.type')" prop="name">
         <template>
           <el-select
@@ -28,7 +28,7 @@
           </el-select>
         </template>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.profilePicture')" prop="name">
+      <el-form-item :label="$t('trainer_labels.profilePicture')" label-width="110px" prop="name">
         <el-image disabled="true" style="width: 30%;" v-for="item in form.pictureList"  :key="item" :src="item"></el-image>
       </el-form-item>
       <el-form-item :label="$t('trainer_labels.birthday')" prop="name">
@@ -41,19 +41,19 @@
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.phoneNumber')" prop="name">
+      <el-form-item :label="$t('trainer_labels.phoneNumber')" label-width="120px" prop="name">
         <el-input disabled v-model="form.phoneNum" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.basicSalary')" prop="name">
+      <el-form-item :label="$t('trainer_labels.basicSalary')" label-width="100px" prop="name">
         <el-input disabled v-model="form.basicSalary" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.allowance')" prop="name">
+      <el-form-item :label="$t('trainer_labels.allowance')" label-width="100px" prop="name">
         <el-input disabled v-model="form.allowance" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.commissionRate')" prop="name">
+      <el-form-item :label="$t('trainer_labels.commissionRate')" label-width="135px" prop="name">
         <el-input disabled style="width: 70px" v-model="form.royaltyRate" class="tams-form-item"></el-input>%
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.entryTime')" prop="name">
+      <el-form-item :label="$t('trainer_labels.entryTime')"  label-width="110px" prop="name">
         <div class="block">
           <el-date-picker
             disabled
@@ -63,10 +63,10 @@
           </el-date-picker>
         </div>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.yogaQualification')" prop="name">
+      <el-form-item :label="$t('trainer_labels.yogaQualification')" label-width="110px" prop="name">
         <el-input disabled type="textarea" v-model="form.qualification" class="tams-form-item"></el-input>
       </el-form-item>
-      <el-form-item :label="$t('trainer_labels.personalIntroduction')" prop="name">
+      <el-form-item :label="$t('trainer_labels.personalIntroduction')" label-width="110px" prop="name">
         <el-input disabled v-model="form.introduction" type="textarea" class="tams-form-item"></el-input>
       </el-form-item>
     </el-form>

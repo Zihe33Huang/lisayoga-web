@@ -5,7 +5,7 @@
              :visible.sync="dialogVisible"
              :before-close="handleClose" >
     <el-form :inline="true" ref="form" :model="form" :rules="rules" label-width="80px"  label-position="left" class="tams-form-container">
-      <el-form-item :label="$t('name')" prop="name">
+      <el-form-item :label="$t('member_labels.name')" prop="name">
         <el-input disabled v-model="form.name" class="tams-form-item"></el-input>
       </el-form-item>
 <!--      <el-form-item :label="$t('member_labels.wechat')" prop="name">-->

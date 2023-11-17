@@ -17,6 +17,17 @@ const customer = {
           })
       })
     },
+    GetCardTypes ({ commit }) {
+      return new Promise((resolve, reject) => {
+        Api.getCardTypes()
+          .then(res => {
+            resolve(res.data)
+          })
+          .catch(err => {
+            reject(err)
+          })
+      })
+    },
     GetCustomerSearch ({ commit }, param) {
       return new Promise((resolve, reject) => {
         Api.getCustomerSearch(param)

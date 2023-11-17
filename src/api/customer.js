@@ -29,6 +29,13 @@ export const getCustomerRefList = () => {
   })
 }
 
+export const getCardTypes = () => {
+  return axios({
+    url: 'vip-card/getCardTypes',
+    method: 'get'
+  })
+}
+
 export const getCustomerById = (id) => {
   return axios({
     url: 'customer/' + id,
